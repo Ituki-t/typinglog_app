@@ -3,3 +3,8 @@
 - 記録したものをCSVに記述
 
 - のちに分析できる機能を付けたい
+
+## Installing requirements
+```bash
+pip install -r requirements.txt
+```
