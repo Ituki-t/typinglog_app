@@ -11,7 +11,7 @@ def load_data():
     if DATA_PATH.exists():
         return pd.read_csv(DATA_PATH)
     else:
-        return pd.DataFrame(columns=["日付", "得点", "正タイプ(回)", "誤タイプ(回)","正確率(%)", "平均タイプ(回/秒)", "ランキング", "時間帯", "スタンドの有無", "備考" ])
+        return pd.DataFrame(columns=["日付", "得点", "正タイプ(回)", "誤タイプ(回)","正確率(%)", "平均タイプ(回/秒)", "ランキング", "時間帯", "スタンドの有無","BGMの有無","何回目？", "備考" ])
 
 df = load_data()
 
@@ -35,6 +35,8 @@ avg_types_per_sec = st.number_input("平均タイプ(回/秒)", 0.0)
 ranking = st.number_input("ランキング", 0)
 time_of_day = st.number_input("時間帯", 0)
 use_stand = st.selectbox("スタンドの有無", ["有", "無"])
+bgm = st.selectbox("BGMの有無", ["有", "無"])
+session_count = st.number_input("何回目？", 1)
 remarks = st.text_area("備考")
 
 if st.button('ログを保存'):
