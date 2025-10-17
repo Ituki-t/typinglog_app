@@ -40,7 +40,7 @@ session_count = st.number_input("何回目？", 1)
 remarks = st.text_area("備考")
 
 if st.button('ログを保存'):
-    new_row = [date, score, correct_types, wrong_types, accuracy, avg_types_per_sec, ranking, time_of_day, use_stand, remarks]
+    new_row = [date, score, correct_types, wrong_types, accuracy, avg_types_per_sec, ranking, time_of_day, use_stand, bgm, session_count, remarks]
     df.loc[len(df)] = new_row
     df.to_csv(DATA_PATH, index=False)
     st.success("ログを保存しました！")
